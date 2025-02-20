@@ -7,19 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>KMTechSpaceship Puzzle</h1>
-    <p>Drag and drop the pieces to complete the puzzle!</p>
-    <div class="game-container">
-        <!-- YouTube Video Player Embed -->
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Py9paavgZ-0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="main-container">
+        <!-- Header Section -->
+        <header>
+            <h1>KMTechSpaceship Puzzle Game</h1>
+            <p class="tagline">Solve the puzzle, feel the adventure!</p>
+        </header>
+        
+        <!-- Game and Video Section -->
+        <div class="content-container">
+            <!-- YouTube Video Embed -->
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Py9paavgZ-0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <!-- Puzzle Game -->
+            <div class="puzzle-container">
+                <canvas id="puzzleCanvas"></canvas>
+                <div class="controls">
+                    <button onclick="startAutoPlay()">Start Auto-Play</button>
+                    <button onclick="shufflePuzzle()">Shuffle</button>
+                </div>
+            </div>
         </div>
         
-        <!-- Puzzle Game -->
-        <div class="puzzle-container">
-            <canvas id="puzzleCanvas"></canvas>
-        </div>
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2025 KMTechSpaceship | All Rights Reserved</p>
+        </footer>
     </div>
+
     <script src="script.js"></script>
+    <script>
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Apply random background color
+        document.body.style.backgroundColor = getRandomColor();
+    </script>
 </body>
 </html>
